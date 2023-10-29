@@ -3,6 +3,8 @@ Un par de funciones de práctica
 """
 import random
 
+
+#Calcular porcentajes
 def porcentajem2(m2totales, m2cubiertos):
     m2descubiertos = m2totales - m2cubiertos
     pm2cubiertos = (m2cubiertos * 100) / m2totales
@@ -19,7 +21,7 @@ def descuento_condicionado(importe_venta):
         importe_final = importe_venta * 0,82
     return importe_final
 
-
+#Obtener el mayor y el menor en una lista numerica random
 def may_men():
     numeros = [random.randint(0,100) for x in range(10)]
     for x in numeros:
@@ -36,10 +38,16 @@ def may_men():
             elif x < menor:
                 menor = x
          
+#Comprobar si un numero es multiplo de otro
+def multiplo_5(numero):
+    if numero % 5 == 0:
+        es_multiplo = True
+
 
 
 
 if __name__ == '__main__':
-    # porcentajem2()
-    # descuento_condicionado()
+    porcentajem2()
+    descuento_condicionado()
     may_men()
+    multiplo_5()
