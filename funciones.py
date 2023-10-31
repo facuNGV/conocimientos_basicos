@@ -1,5 +1,5 @@
 """
-Un par de funciones de práctica 
+Un par de funciones de práctica y conocimientos básicos
 """
 import random
 
@@ -44,10 +44,75 @@ def multiplo_5(numero):
         es_multiplo = True
 
 
+def tabla_del(numero):
+
+    tabla = [numero * x for x in range(50)]
+    return tabla
+
+
+#Descuentos sabiendo la cantidad de litros vendidos y el importe a pagar 
+def escala_descuentos(importe_total, litros_vendidos):
+    if litros_vendidos > 500:
+        importe_final = importe_total * 0.75
+    elif litros_vendidos >= 301:
+        importe_final = importe_total * 0.85
+    elif litros_vendidos >= 101:
+        importe_final = importe_total * 0.90
+    else:
+        importe_final = importe_total
+    return importe_final
+
+
+#Escala de precios segun el usuario combine, 
+# Opción de procesador, memoria y si desea extender el Disco
+def compra_combinada(OP, OM, OD):
+    match OP:
+        case 1:
+            match OM:
+                case 1:
+                    p = 800
+                case 2:
+                    p = 900
+                case 3:
+                    p = 1000
+        case 2:
+            match OM:
+                case 1:
+                    p = 900
+                case 2:
+                    p = 1000
+                case 3:
+                    p = 1400
+        case 3:
+            match OM:
+                case 1:
+                    p = 1200
+                case 2:
+                    p = 1400
+                case 3:
+                    p = 2000
+    if OD == 1:
+        p = p + 300
+    print (p)
+    return p
+
+
+def es_primo(numero):
+    acu = 0
+    for x in range(1, numero+1):
+        if (numero % x) == 0:
+            acu += 1
+    if acu == 2:
+        return True
 
 
 if __name__ == '__main__':
+ 
     porcentajem2()
     descuento_condicionado()
     may_men()
     multiplo_5()
+    tabla_del()
+    escala_descuentos()
+    es_primo()
+    compra_combinada()
