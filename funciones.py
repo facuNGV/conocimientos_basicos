@@ -105,9 +105,17 @@ def es_primo(numero):
     if acu == 2:
         return True
 
+#Calcular promedio de una lista de numeros
+def promedio(numeros):
+
+    if len(numeros) != 0:
+        promedio = sum(numeros) / len(numeros)
+    elif numeros == 0:
+        promedio = 0
+    return promedio
 
 if __name__ == '__main__':
- 
+    promedio()   
     porcentajem2()
     descuento_condicionado()
     may_men()
