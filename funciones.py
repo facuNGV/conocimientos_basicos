@@ -116,7 +116,7 @@ def promedio(numeros):
     return promedio
 
 
-#Funciones de Extraccion de un JSON y manipulación de sus datos
+#Funciones de Extraccion de un JSON y creación de un dict a partir de este
 def extraer(url):
     response = requests.get(url= url)
     if response.ok:
