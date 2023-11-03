@@ -2,7 +2,8 @@
 Un par de funciones de práctica y conocimientos básicos
 """
 import random
-
+import requests
+import json
 
 #Calcular porcentajes
 def porcentajem2(m2totales, m2cubiertos):
@@ -114,6 +115,24 @@ def promedio(numeros):
         promedio = 0
     return promedio
 
+
+#Funciones de Extraccion de un JSON y manipulación de sus datos
+def extraer(url):
+    response = requests.get(url= url)
+    if response.ok:
+        data = response.json()
+        return data
+
+def contar_titulos(data):
+    titulos = {}
+    for i in range(11):
+        contador_titulos = 0
+        for x in data:            
+            if x["userId"] == i and x["completed"] == True:
+                contador_titulos += 1
+                titulos[i] = contador_titulos
+    return titulos
+
 if __name__ == '__main__':
     promedio()   
     porcentajem2()
@@ -124,3 +143,5 @@ if __name__ == '__main__':
     escala_descuentos()
     es_primo()
     compra_combinada()
+    extraer()
+    contar_titulos()
