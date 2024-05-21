@@ -70,7 +70,6 @@ def es_multiplo():
 def tabla_del():
     numero = int(input("Cual es la tabla del: "))
     tabla = [numero * x for x in range(1, 10)]
-    print(tabla)
     return tabla
 
 
@@ -88,7 +87,7 @@ def escala_descuentos(importe_total, litros_vendidos):
 
 
 #Escala de precios segun el usuario combine, 
-# Opción de procesador, memoria y si desea extender el Disco
+# Opción de procesador, Opcion de memoria y si desea extender el Disco
 def compra_combinada(OP, OM, OD):
     match OP:
         case 1:
@@ -137,7 +136,9 @@ def extraer(url):
         data = response.json()
         return data
 
-def contar_titulos(data):
+#Analiza un json correspondiente a un registro de estudiantes
+def contar_titulos():
+    data = extraer(url= 'some url api json')
     titulos = {}
     for i in range(11):
         contador_titulos = 0
