@@ -55,9 +55,16 @@ def may_men():
 
 
 #Comprobar si un numero es multiplo de otro
-def multiplo_5(numero):
-    if numero % 5 == 0:
+def es_multiplo():
+    es_multiplo = False
+    numero = int(input("Ingrese un numero: "))
+    mutiplo_de = int(input("Desea saber si es multiplo de: "))
+    if numero % mutiplo_de == 0:
         es_multiplo = True
+        print("Es multiplo")
+    else:
+        print("No es multiplo")
+    return es_multiplo
 
 
 def tabla_del(numero):
@@ -140,11 +147,11 @@ def contar_titulos(data):
     return titulos
 
 if __name__ == '__main__':
+    es_multiplo()
     may_men()
     promedio() 
     porcentajem2()
     descuento_condicionado()
-    multiplo_5()
     tabla_del()
     escala_descuentos()
     es_primo()
