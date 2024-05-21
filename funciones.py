@@ -5,6 +5,16 @@ import random
 import requests
 import json
 
+
+#Calcular promedio de una lista de numeros
+def promedio(numeros):
+    if len(numeros) != 0:
+        promedio = sum(numeros) / len(numeros)
+    elif numeros == 0:
+        promedio = 0
+    return promedio
+
+
 #Calcular porcentajes
 def porcentajem2(m2totales, m2cubiertos):
     m2descubiertos = m2totales - m2cubiertos
@@ -15,30 +25,35 @@ def porcentajem2(m2totales, m2cubiertos):
 
 def descuento_condicionado(importe_venta):
     if importe_venta < 1000:
-        importe_final = 1000
+        importe_final = importe_venta
     elif importe_venta >= 1000 and importe_venta < 5000:
         importe_final = importe_venta * 0,90
     elif importe_venta >= 5000:
         importe_final = importe_venta * 0,82
     return importe_final
 
-#Obtener el mayor y el menor en una lista numerica random
-def may_men():
-    numeros = [random.randint(0,100) for x in range(10)]
-    for x in numeros:
 
-        if x == numeros[1] and x > numeros[0]:
-                mayor = x
-                menor = numeros[0]
-        elif x == numeros[1] and x < numeros[0]:
-            mayor = numeros[0]
-            menor = x
-        elif x != numeros[0]:
-            if x > mayor:
-                mayor = x
-            elif x < menor:
-                menor = x
-         
+#Obtener el maximo y minimo de una lista random
+def may_men():
+    numeros = [random.randint(0,50) for x in range(5)]
+    
+    if numeros[0] > numeros[1]:
+        mayor = numeros[0]
+        menor = numeros[1]
+    elif numeros[0] < numeros[1]:
+        menor = numeros[0]
+        mayor = numeros[1]
+    elif numeros [0] == numeros[1]:
+        mayor = numeros[0]
+        menor = numeros [1]
+    
+    for x in numeros:      
+        if x > mayor:
+            mayor = x
+        elif x < menor:
+            menor = x    
+
+
 #Comprobar si un numero es multiplo de otro
 def multiplo_5(numero):
     if numero % 5 == 0:
@@ -106,15 +121,6 @@ def es_primo(numero):
     if acu == 2:
         return True
 
-#Calcular promedio de una lista de numeros
-def promedio(numeros):
-
-    if len(numeros) != 0:
-        promedio = sum(numeros) / len(numeros)
-    elif numeros == 0:
-        promedio = 0
-    return promedio
-
 
 #Funciones de Extraccion de un JSON y creación de un dict a partir de este
 def extraer(url):
@@ -134,10 +140,10 @@ def contar_titulos(data):
     return titulos
 
 if __name__ == '__main__':
-    promedio()   
+    may_men()
+    promedio() 
     porcentajem2()
     descuento_condicionado()
-    may_men()
     multiplo_5()
     tabla_del()
     escala_descuentos()
