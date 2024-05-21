@@ -67,9 +67,10 @@ def es_multiplo():
     return es_multiplo
 
 
-def tabla_del(numero):
-
-    tabla = [numero * x for x in range(50)]
+def tabla_del():
+    numero = int(input("Cual es la tabla del: "))
+    tabla = [numero * x for x in range(1, 10)]
+    print(tabla)
     return tabla
 
 
@@ -147,12 +148,12 @@ def contar_titulos(data):
     return titulos
 
 if __name__ == '__main__':
+    tabla_del()
     es_multiplo()
     may_men()
     promedio() 
     porcentajem2()
     descuento_condicionado()
-    tabla_del()
     escala_descuentos()
     es_primo()
     compra_combinada()
